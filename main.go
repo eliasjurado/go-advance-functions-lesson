@@ -41,7 +41,7 @@ func main() {
 	fmt.Println(r1, r2)
 
 	//funciones de orden superior: la función Double ejecuta otras funciones
-	//Así, en este caso, primero ejecuta Double y luego AddOne
+	//Así, en este caso, primero ejecuta Double y luego AddOne | Resultado : 11
 	r3 := ordensuperior.Double(operaciones.AddOne, 5)
 	log.Printf("Resultado : %+v\n", r3)
 
