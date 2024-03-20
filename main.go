@@ -3,6 +3,7 @@ package main
 import (
 	"advance-functions/anonima"
 	"advance-functions/operaciones"
+	"advance-functions/ordensuperior"
 	"advance-functions/recursiva"
 	"advance-functions/variadica"
 	"fmt"
@@ -38,4 +39,10 @@ func main() {
 	r1 := operaciones.Aplicar(operaciones.Duplicar, 5)
 	r2 := operaciones.Aplicar(operaciones.Triplicar, 5)
 	fmt.Println(r1, r2)
+
+	//funciones de orden superior: la función Double ejecuta otras funciones
+	//Así, en este caso, primero ejecuta Double y luego AddOne
+	r3 := ordensuperior.Double(operaciones.AddOne, 5)
+	log.Printf("Resultado : %+v\n", r3)
+
 }

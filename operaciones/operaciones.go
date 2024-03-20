@@ -1,5 +1,9 @@
 package operaciones
 
+func AddOne(n int) int {
+	return n + 1
+}
+
 func Duplicar(n int) int {
 	return n * 2
 }
