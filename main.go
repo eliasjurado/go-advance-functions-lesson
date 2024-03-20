@@ -1,6 +1,8 @@
 package main
 
 import (
+	"advance-functions/anonima"
+	"advance-functions/operaciones"
 	"advance-functions/recursiva"
 	"advance-functions/variadica"
 	"fmt"
@@ -15,4 +17,25 @@ func main() {
 	variadica.ImprimirDatos("Hola", 35, "Elias", "Carla", 45.45, "Tomas", -1)
 
 	fmt.Println(recursiva.Factorial(5))
+
+	//funcion anónima
+	func() {
+		log.Printf("%+v\n", "hola soy una funcion anónima")
+	}()
+
+	//la funcion anónima se puede asignar a una variable
+	saludo := func(name string) {
+		log.Printf("hola %+v, soy una funcion anónima\n", name)
+	}
+
+	// y luego usar la variable como si fuera un método, en este caso la función recibe un parámetro
+	saludo("Elias")
+
+	//tambien podría crear una función que reciba a su vez un string y una función e internamente la ejecute
+	anonima.Saludar("Elias", saludo)
+
+	//es decir estamos pasando las funciones como un valor. Veamos el siguiente ejemplo
+	r1 := operaciones.Aplicar(operaciones.Duplicar, 5)
+	r2 := operaciones.Aplicar(operaciones.Triplicar, 5)
+	fmt.Println(r1, r2)
 }
