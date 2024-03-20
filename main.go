@@ -2,6 +2,7 @@ package main
 
 import (
 	"advance-functions/anonima"
+	"advance-functions/closure"
 	"advance-functions/operaciones"
 	"advance-functions/ordensuperior"
 	"advance-functions/recursiva"
@@ -45,4 +46,10 @@ func main() {
 	r3 := ordensuperior.Double(operaciones.AddOne, 5)
 	log.Printf("Resultado : %+v\n", r3)
 
+	//closure: la aplicación "recuerda" el valor anterior
+	nextInt := closure.Incrementer()
+	fmt.Println(nextInt()) //1
+	fmt.Println(nextInt()) //2
+	fmt.Println(nextInt()) //3
+	fmt.Println(nextInt()) //4
 }
